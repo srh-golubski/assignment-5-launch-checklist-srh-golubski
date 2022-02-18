@@ -1,6 +1,7 @@
 // Write your helper functions here!
 //require('isomorphic-fetch');
-try{require('isomorphic-fetch');}catch(error){};
+try{require('isomorphic-fetch');
+    }catch(error){};
 
 function addDestinationInfo(document, name, diameter, star, distance, moons, image) {
    // Here is the HTML formatting for our mission target div.
@@ -22,8 +23,6 @@ function addDestinationInfo(document, name, diameter, star, distance, moons, ima
 function validateInput(testInput) {
     if (testInput == "") {
         return "Empty";
-    } else if (testInput == null) {
-        return "Empty";
     } else if (isNaN(testInput)) {
         return "Not a Number";
     } else if (!isNaN(testInput)) {
@@ -33,11 +32,11 @@ function validateInput(testInput) {
 
 function formSubmission(document, list, pilot, copilot, fuelLevel, cargoMass) {
    if ((validateInput(pilot)=== "Empty") || (validateInput(copilot)==="Empty") || (validateInput(fuelLevel)==="Empty") || (validateInput(cargoMass)==="Empty")) {
-       window.alert("All fields are required!");
+       alert("All fields are required!");
    }
 
    if ((validateInput(pilot)==="Is a Number") || (validateInput(copilot)==="Is a Number") || (validateInput(fuelLevel)==="Not a Number") || (validateInput(cargoMass)==="Not a Number")) {
-       window.alert("Make sure to enter valid information for each field!");
+       alert("Make sure to enter valid information for each field!");
    }
 
    document.getElementById("pilotStatus").innerHTML=`Pilot ${pilot} is ready for launch`;
