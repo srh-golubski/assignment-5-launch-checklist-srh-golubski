@@ -32,11 +32,11 @@ function validateInput(testInput) {
 
 function formSubmission(document, list, pilot, copilot, fuelLevel, cargoMass) {
    if ((validateInput(pilot)=== "Empty") || (validateInput(copilot)==="Empty") || (validateInput(fuelLevel)==="Empty") || (validateInput(cargoMass)==="Empty")) {
-       alert("All fields are required!");
+       showAlert("All fields are required!");
    }
 
    if ((validateInput(pilot)==="Is a Number") || (validateInput(copilot)==="Is a Number") || (validateInput(fuelLevel)==="Not a Number") || (validateInput(cargoMass)==="Not a Number")) {
-       alert("Make sure to enter valid information for each field!");
+       showAlert("Make sure to enter valid information for each field!");
    }
 
    document.getElementById("pilotStatus").innerHTML=`Pilot ${pilot} is ready for launch`;
@@ -89,6 +89,11 @@ function pickPlanet(planets) {
     let index = Math.floor(Math.random() * planets.length);
     return planets[index];
 }
+
+function showAlert(alertMessage) {
+    try{window.alert(alertMessage); 
+} catch(error){};
+};
 
 module.exports.addDestinationInfo = addDestinationInfo;
 module.exports.validateInput = validateInput;
