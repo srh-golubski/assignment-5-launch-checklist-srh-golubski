@@ -2,9 +2,8 @@
 
 window.addEventListener("load", function() {
 
-    window.addEventListener("load", function(){
-        document.getElementById("faultyItmes").style.visibility = "hidden"
-    });
+    let list = document.getElementById("faultyItems");
+    list.style.visibility = 'hidden';
 
    let listedPlanets;
    // Set listedPlanetsResponse equal to the value returned by calling myFetch()
